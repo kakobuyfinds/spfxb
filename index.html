@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>PikoBuy spreadsheet: categorias, medidas e guia de QC</title>
+<meta name="description" content="Guia independente em português sobre PikoBuy spreadsheet: explore categorias na Cafans, compare medidas, leia fotos QC e prepare uma seleção mais informada.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#183c38">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="PikoBuy spreadsheet — escolher com critério">
+<meta property="og:description" content="Categorias de moda, apontamentos de compra e respostas diretas sobre medidas, fotografias e custos.">
+<meta name="twitter:card" content="summary">
+<!-- index.html. Definir a URL canónica quando o domínio de publicação for conhecido. -->
+<!--
+Pesquisa editorial: dez sites encontrados através de pesquisa web.
+Não foi possível confirmar a posição na primeira página do Google.
+
+Fonte | Termos observados | Enfoque editorial resumido
+pikobuy.to | spreadsheet, categories, brands | Descoberta por categorias e marcas.
+rep.tools/guides/pikobuy-spreadsheet | guide, QC, shipping | Explicação da lista e do processo.
+pikobuybestsheet.com | curated finds, QC photos | Referências e imagens de inspeção.
+usfansyupoo.com/agents/pikobuy/ | product finds, source reference | Correspondência entre origem e variante.
+pikobuyfinds.net/spreadsheet/ | product research, categories | Organização por tipo de produto.
+pikobuyspreadsheet.me/faq | orders, returns, shipping | Perguntas sobre etapas e limites.
+pikobuys-spreadsheet.com | database, links, photos | Navegação numa base de referências.
+pikobuy.org/faq.html | spreadsheet FAQ, browsing | Orientação e apoio a encomendas.
+pikobuy.us/faq.html | QC, safety, shipping | Verificação antes da compra.
+pikobuy-spreadsheets.com | Taobao, Weidian, finds | Pesquisa por categoria e variante.
+
+Núcleos secundários:
+achados PikoBuy; fotos QC PikoBuy; guia de tamanhos PikoBuy; categorias PikoBuy.
+
+24 intenções de cauda longa trabalhadas no conteúdo:
+como usar uma PikoBuy spreadsheet;
+como organizar achados PikoBuy;
+como comparar referências de produtos;
+como confirmar a variante;
+como escolher sapatilhas pelo comprimento;
+como medir a palmilha;
+como comparar tamanhos EU e US;
+como avaliar costuras de sapatilhas;
+como medir uma sweatshirt;
+como escolher uma t-shirt pelo peito;
+como verificar o comprimento das mangas;
+como escolher um casaco para sobreposição;
+como medir calças pela cintura;
+como comparar o comprimento de calções;
+como escolher um boné ajustável;
+como conferir medidas de conjuntos;
+como verificar a composição da roupa interior;
+como comparar camisolas desportivas;
+como medir acessórios;
+como ler fotos QC;
+quando pedir fotografias adicionais;
+como estimar o custo total;
+como preparar uma compra para Portugal;
+como preparar uma compra para o Brasil.
+-->
+<style>
+:root{
+  color-scheme:light;
+  --paper:#f7f4ec;
+  --ink:#1c302d;
+  --green:#183c38;
+  --lime:#dce9a4;
+  --muted:#53635c;
+  --line:#d7dcd0;
+  --white:#fffef9
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.65
+}
+a{color:inherit;text-underline-offset:4px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,summary:focus-visible{
+  outline:3px solid #ad592d;
+  outline-offset:5px
+}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{line-height:1.15;text-wrap:balance}
+h1{
+  font-size:clamp(2.6rem,6vw,5.7rem);
+  letter-spacing:-.055em;
+  max-width:13ch
+}
+h2{
+  font-size:clamp(1.7rem,3vw,2.7rem);
+  letter-spacing:-.035em
+}
+h3{font-size:1.2rem}
+p{max-width:72ch}
+p+p{margin-top:1rem}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.masthead{
+  padding:23px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  border-bottom:1px solid var(--line)
+}
+.brand{
+  font-weight:850;
+  letter-spacing:.1em;
+  text-decoration:none;
+  font-size:1.1rem
+}
+.masthead span{font-size:.8rem;color:var(--muted)}
+.intro{
+  padding:36px 0 20px;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:25px
+}
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:var(--muted);
+  margin-bottom:15px
+}
+.intro h2{font-size:1.6rem}
+.intro p{font-size:.9rem;color:var(--muted);max-width:48ch}
+.categories{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:9px;
+  margin-bottom:30px
+}
+.categories a{
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:14px 12px;
+  text-decoration:none;
+  font-size:.86rem;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between;
+  gap:8px
+}
+.categories a:hover{background:var(--lime)}
+.categories i{font-style:normal;color:var(--muted)}
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  background:var(--green);
+  color:var(--paper)
+}
+.hero-copy{
+  padding:clamp(25px,4vw,54px);
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  justify-content:center;
+  gap:23px
+}
+.hero .eyebrow{color:var(--lime);margin:0}
+.hero p{color:#e1e7dd}
+.hero figure{display:flex;flex-direction:column}
+.hero img{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  object-fit:cover
+}
+.hero figcaption{
+  padding:10px 16px;
+  font-size:.73rem;
+  color:#d9e0d9
+}
+.button{
+  display:inline-block;
+  padding:12px 20px;
+  background:var(--lime);
+  color:var(--green);
+  font-weight:800;
+  text-decoration:none
+}
+.note{font-size:.8rem}
+.section{padding:64px 0;border-bottom:1px solid var(--line)}
+.section-head{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:start;
+  margin-bottom:28px
+}
+.section-head p{color:var(--muted)}
+.answer{
+  border-left:4px solid var(--green);
+  padding:18px 23px;
+  background:var(--white);
+  margin-top:28px
+}
+.answer strong{display:block;margin-bottom:6px}
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+.feature{background:var(--white);border:1px solid var(--line)}
+.feature img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feature figcaption{padding:20px}
+.feature p{margin:12px 0;font-size:.9rem;color:var(--muted)}
+.feature a{font-size:.88rem;font-weight:750}
+.caption{margin-top:15px;color:var(--muted);font-size:.8rem}
+.table-scroll{overflow-x:auto}
+table{
+  width:100%;
+  border-collapse:collapse;
+  text-align:left;
+  font-size:.93rem;
+  min-width:570px
+}
+th,td{
+  padding:17px 16px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top
+}
+thead{background:var(--green);color:white}
+th[scope=row]{width:23%}
+td{max-width:40ch}
+.journal{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.journal article{
+  padding:28px;
+  background:var(--white);
+  border-top:3px solid var(--green)
+}
+.journal .number{
+  font-size:.75rem;
+  color:var(--muted);
+  display:block;
+  margin-bottom:15px
+}
+.journal h3{font-size:1.4rem;margin-bottom:17px}
+.journal p{font-size:.94rem}
+.journal ul{padding-left:21px;font-size:.92rem}
+.journal li{margin:7px 0}
+.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:45px}
+.faq details{padding:19px 0;border-bottom:1px solid var(--line)}
+.faq details:first-child{padding-top:0}
+.faq summary{font-weight:750;cursor:pointer;padding-right:12px}
+.faq details p{margin-top:12px;color:var(--muted);font-size:.94rem}
+.closing{
+  background:var(--lime);
+  padding:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  margin:42px 0
+}
+.closing h2{font-size:1.6rem}
+.closing .button{
+  background:var(--green);
+  color:white;
+  white-space:nowrap
+}
+footer{padding:10px 0 35px;font-size:.8rem;color:var(--muted)}
+footer p+p{margin-top:10px}
+@media(max-width:850px){
+  .categories{grid-template-columns:repeat(3,1fr)}
+  .hero{grid-template-columns:1fr 1fr}
+  .hero img{min-height:390px}
+  .features{gap:12px}
+  .feature figcaption{padding:16px}
+  .section-head{grid-template-columns:1fr;gap:14px}
+  .faq{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:600px){
+  .wrap{width:calc(100% - 28px)}
+  .masthead{align-items:start}
+  .masthead span{max-width:15ch;text-align:right}
+  .intro{display:block}
+  .intro p{margin-top:12px}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .categories a{font-size:.78rem}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:30px 24px}
+  .hero img{min-height:0;height:auto;aspect-ratio:4/3}
+  .features,.journal{grid-template-columns:1fr}
+  .section{padding:43px 0}
+  .closing{display:block;padding:24px}
+  .closing a{margin-top:20px}
+  .feature img{aspect-ratio:16/10}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "name":"PikoBuy spreadsheet: categorias, medidas e guia de QC",
+      "inLanguage":"pt",
+      "description":"Guia independente em português para comparar categorias, medidas, fotos QC e componentes do custo total."
+    },
+    {
+      "@type":"Article",
+      "headline":"Fotos QC PikoBuy: observar antes de decidir",
+      "inLanguage":"pt",
+      "author":{"@type":"Organization","name":"Caderno de Escolhas"},
+      "articleBody":"Fotos QC são imagens usadas numa inspeção visual. Compare a referência e a variante escolhida antes de avaliar detalhes. Observe costuras, simetria e acabamento com luz suficiente. Peça fotografias adicionais quando não conseguir ver uma medida ou um pormenor relevante. Uma fotografia não comprova autenticidade, conforto nem durabilidade."
+    },
+    {
+      "@type":"Article",
+      "headline":"Guia de tamanhos PikoBuy: medir uma peça que já usa",
+      "inLanguage":"pt",
+      "author":{"@type":"Organization","name":"Caderno de Escolhas"},
+      "articleBody":"Comece por uma peça que lhe assente bem e meça-a numa superfície plana. Numa sweatshirt ou t-shirt, compare largura do peito e comprimento; num casaco, confirme também mangas e espaço para sobreposição. Nas calças, compare cintura, anca e entreperna; nos calções, confira o comprimento total. Registe se a tabela apresenta largura plana ou circunferência. As letras S, M e L não substituem medidas em centímetros."
+    },
+    {
+      "@type":"FAQPage",
+      "inLanguage":"pt",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"O que é uma PikoBuy spreadsheet?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"É uma lista organizada de referências de produtos, normalmente com categorias, ligações, fotografias e notas. Serve para descobrir e comparar opções; cada referência deve ser novamente verificada antes de comprar."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Este é o site oficial da PikoBuy?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Não. Este é um guia editorial independente em português, sem associação oficial à PikoBuy ou às marcas mencionadas. As ligações de navegação conduzem à Cafans e às categorias indicadas."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"As fotos QC garantem autenticidade?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Não. As fotos QC ajudam a observar detalhes visíveis, mas não certificam autenticidade, composição, conforto ou durabilidade. Procure documentação de origem quando a autenticidade for essencial."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Como escolher o tamanho de sapatilhas?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Meça o pé e compare o comprimento em centímetros com a tabela do modelo. Confirme se a medida indicada é do pé ou da palmilha; não trate esses valores como equivalentes. A conversão EU ou US, por si só, pode ser insuficiente."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"O preço apresentado é o custo final?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Não necessariamente. Verifique produto, transporte, serviços, câmbio e eventuais encargos no destino. Confirme os valores atuais antes de pagar; este guia não publica cotações nem prazos garantidos."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Posso comprar diretamente nesta página?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Não. Esta página apresenta orientação e acesso às categorias da Cafans. Não recebe pagamentos, não gere encomendas e não fornece apoio oficial da PikoBuy."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/spfxb/">
+</head>
+<body>
+<header class="wrap masthead">
+  <a class="brand" href="https://www.cafans.com" aria-label="Visitar Cafans">CADERNO / ESCOLHAS</a>
+  <span>Moda, referências e decisões informadas · PT</span>
+</header>
+
+<main class="wrap" id="conteudo">
+  <section aria-labelledby="categorias-titulo">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Comece por uma categoria</p>
+        <h2 id="categorias-titulo">Menos procura. Mais contexto.</h2>
+      </div>
+      <p>Acesso direto às categorias da Cafans. Consulte a página de destino para conhecer as referências disponíveis.</p>
+    </div>
+    <nav class="categories" aria-label="Categorias de produtos na Cafans">
+      <a href="https://cafans.com/category-911-Shoes.html"><span lang="en">Shoes</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html"><span lang="en">Hoodies/Sweaters</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-913-T-Shirts.html"><span lang="en">T-Shirts</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-914-Jackets.html"><span lang="en">Jackets</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-915-Pants%2FShorts.html"><span lang="en">Pants/Shorts</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-916-Headwear.html"><span lang="en">Headwear</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-917-Sets.html"><span lang="en">Sets</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-918-underwear%2Funderpants.html"><span lang="en">Underwear/underpants</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-919-Jersey.html"><span lang="en">Jersey</span><i aria-hidden="true">↗</i></a>
+      <a href="https://cafans.com/category-920-Accessories.html"><span lang="en">Accessories</span><i aria-hidden="true">↗</i></a>
+    </nav>
+  </section>
+
+  <section class="hero" aria-labelledby="titulo">
+    <div class="hero-copy">
+      <p class="eyebrow">Guia independente · edição em português</p>
+      <h1 id="titulo">PikoBuy spreadsheet, com critério.</h1>
+      <p>Uma referência chama a atenção. As medidas, os materiais e as fotografias ajudam a decidir. Organize a sua pesquisa antes de escolher a próxima peça.</p>
+      <a class="button" href="https://www.cafans.com">Explorar referências na Cafans ↗</a>
+      <p class="note">Conteúdo editorial. Sem associação oficial à PikoBuy ou às marcas apresentadas.</p>
+    </div>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1000&amp;q=78" alt="Sapatilha Nike vermelha com sola clara sobre um fundo vermelho" width="1000" height="750" fetchpriority="high" loading="eager" decoding="async">
+      <figcaption>Referência visual de calçado desportivo; não é uma oferta de produto.</figcaption>
+    </figure>
+  </section>
+
+  <aside class="answer" aria-label="Resposta breve">
+    <strong>Para que serve esta página?</strong>
+    <p>Para aprender a usar uma lista de referências: escolher uma categoria, comparar a variante, confirmar medidas e identificar informação em falta. A navegação de produtos abre a Cafans.</p>
+  </aside>
+
+  <section class="section" aria-labelledby="visual-titulo">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Dossiê visual</p>
+        <h2 id="visual-titulo">Do conjunto ao pormenor.</h2>
+      </div>
+      <p>Use estas imagens como inspiração de proporções e combinações. Não demonstram stock, autenticidade ou correspondência com artigos da Cafans.</p>
+    </div>
+    <div class="features">
+      <figure class="feature">
+        <img src="https://ca.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-casquette-lv-signature--M7282M_PM1_Look%20view.jpg?wid=640" alt="Modelo com boné Louis Vuitton, lenço cinzento e casaco rosa-claro" width="640" height="480" loading="lazy" decoding="async">
+        <figcaption>
+          <h3>Volume e proporção</h3>
+          <p>Um boné e um lenço mudam o equilíbrio de um casaco. Compare altura da copa, ajuste e dimensão do tecido.</p>
+          <a href="https://www.cafans.com">Explorar ideias de coordenação ↗</a>
+        </figcaption>
+      </figure>
+      <figure class="feature">
+        <img src="https://specials-images.forbesimg.com/imageserve/69a9ef4e0fb39a40a4a6639d/960x0.jpg" alt="Seleção de malas, lenço e calçado Gucci com padrões e faixas da marca" width="960" height="720" loading="lazy" decoding="async">
+        <figcaption>
+          <h3>Texturas que dialogam</h3>
+          <p>Uma mala estruturada e um acessório leve criam contrastes. Confirme dimensões, fechos e acabamento das ferragens.</p>
+          <a href="https://www.cafans.com">Comparar referências de acessórios ↗</a>
+        </figcaption>
+      </figure>
+      <figure class="feature">
+        <img src="https://urbanexchangeclothing.com/cdn/shop/files/Photoroom_20251023_113619_2.jpg?width=640" alt="Mala Dior azul e branca junto de outras malas e caixas de marcas de moda" width="640" height="480" loading="lazy" decoding="async">
+        <figcaption>
+          <h3>Detalhes à escala</h3>
+          <p>Uma fotografia geral não revela tudo. Procure imagens do interior, das alças e das zonas de maior desgaste.</p>
+          <a href="https://www.cafans.com">Continuar a pesquisa na Cafans ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="caption">Imagens externas de referência: Unsplash, Louis Vuitton, Forbes e Urban Exchange. A disponibilidade depende dos respetivos fornecedores.</p>
+  </section>
+
+  <section class="section" aria-labelledby="achados-titulo">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Tema / seleção por finalidade</p>
+        <h2 id="achados-titulo">Achados PikoBuy: o que comparar em cada categoria.</h2>
+      </div>
+      <p>Uma lista curta com informação comparável é mais útil do que dezenas de separadores abertos. Anote a origem, a variante e a data da consulta para cada referência.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <caption>Critérios de comparação antes de escolher</caption>
+        <thead>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Pergunta útil</th>
+            <th scope="col">O que registar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sapatilhas</th>
+            <td>Como escolher pelo comprimento e comparar tamanhos EU e US?</td>
+            <td>Comprimento do pé, tabela do modelo e indicação de medida do pé ou da palmilha. Observe também simetria e costuras.</td>
+          </tr>
+          <tr>
+            <th scope="row">Sweatshirts e t-shirts</th>
+            <td>Como medir uma sweatshirt ou escolher uma t-shirt pelo peito?</td>
+            <td>Largura entre axilas, comprimento e mangas, usando uma peça sua como referência.</td>
+          </tr>
+          <tr>
+            <th scope="row">Casacos</th>
+            <td>Como escolher um casaco para sobreposição?</td>
+            <td>Espaço sobre a camada interior, largura dos ombros, fecho e comprimento das mangas.</td>
+          </tr>
+          <tr>
+            <th scope="row">Calças e calções</th>
+            <td>Como comparar cintura, entreperna e comprimento total?</td>
+            <td>Medidas com a peça plana, elasticidade indicada e corte pretendido.</td>
+          </tr>
+          <tr>
+            <th scope="row">Bonés e conjuntos</th>
+            <td>Como escolher um boné ajustável e conferir medidas de conjuntos?</td>
+            <td>Circunferência ajustável do boné e tabela separada para cada peça do conjunto.</td>
+          </tr>
+          <tr>
+            <th scope="row">Roupa interior e camisolas desportivas</th>
+            <td>Como verificar composição e comparar o corte de uma camisola?</td>
+            <td>Composição declarada, tabela de medidas e condições de devolução apresentadas pelo vendedor.</td>
+          </tr>
+          <tr>
+            <th scope="row">Acessórios</th>
+            <td>Como medir acessórios antes de comprar?</td>
+            <td>Comprimento de correntes e cintos, diâmetro de anéis e dimensões de malas. Em peças atribuídas à Hermès, confira a referência exata e a documentação de origem.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="artigos-titulo">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Caderno de leitura / artigos</p>
+        <h2 id="artigos-titulo">Quatro notas para uma seleção mais clara.</h2>
+      </div>
+      <p>Antes de transformar uma descoberta numa compra, resolva uma dúvida de cada vez: imagem, tamanho, orçamento e correspondência da referência.</p>
+    </div>
+    <div class="journal">
+      <article>
+        <span class="number">01 / IMAGEM</span>
+        <h3>Fotos QC PikoBuy: observar antes de decidir</h3>
+        <p>Fotos QC são imagens usadas numa inspeção visual. Compare a referência e a variante escolhida antes de avaliar detalhes. Observe costuras, simetria e acabamento com luz suficiente.</p>
+        <p>Peça fotografias adicionais quando não conseguir ver uma medida ou um pormenor relevante. Uma fotografia não comprova autenticidade, conforto nem durabilidade.</p>
+      </article>
+      <article>
+        <span class="number">02 / MEDIDA</span>
+        <h3>Guia de tamanhos PikoBuy: medir uma peça que já usa</h3>
+        <p>Comece por uma peça que lhe assente bem e meça-a numa superfície plana. Numa sweatshirt ou t-shirt, compare largura do peito e comprimento; num casaco, confirme também mangas e espaço para sobreposição.</p>
+        <p>Nas calças, compare cintura, anca e entreperna; nos calções, confira o comprimento total. Registe se a tabela apresenta largura plana ou circunferência. As letras S, M e L não substituem medidas em centímetros.</p>
+      </article>
+      <article>
+        <span class="number">03 / ORÇAMENTO</span>
+        <h3>Como estimar o custo total sem confundir parcelas</h3>
+        <p>Separe o valor do artigo, transporte, serviços e câmbio. Um valor mostrado numa lista pode estar desatualizado ou corresponder a outra variante.</p>
+        <p>Para preparar uma compra para Portugal ou para o Brasil, confirme os custos e as condições aplicáveis ao destino antes de pagar. Peso, dimensões e modalidade de envio podem alterar a estimativa. Este guia não apresenta cálculos fiscais nem promete um prazo de entrega.</p>
+      </article>
+      <article>
+        <span class="number">04 / ORGANIZAÇÃO</span>
+        <h3>Categorias PikoBuy: da referência à lista curta</h3>
+        <p>Ao usar uma PikoBuy spreadsheet, agrupe as referências por utilização: caminhada, treino, roupa do dia a dia ou acessórios. Compare primeiro peças que respondem à mesma necessidade.</p>
+        <ul>
+          <li>Confirme o identificador e a origem da referência.</li>
+          <li>Registe cor, tamanho e material declarados para a variante.</li>
+          <li>Anote a informação que falta, em vez de a presumir.</li>
+          <li>Volte à página de destino antes de tomar a decisão.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section faq" aria-labelledby="faq-titulo">
+    <div>
+      <p class="eyebrow">Respostas diretas</p>
+      <h2 id="faq-titulo">Perguntas antes de continuar.</h2>
+      <p class="caption">Orientação sobre pesquisa de produtos e leitura de referências.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>O que é uma PikoBuy spreadsheet?</summary>
+        <p>É uma lista organizada de referências de produtos, normalmente com categorias, ligações, fotografias e notas. Serve para descobrir e comparar opções; cada referência deve ser novamente verificada antes de comprar.</p>
+      </details>
+      <details>
+        <summary>Este é o site oficial da PikoBuy?</summary>
+        <p>Não. Este é um guia editorial independente em português, sem associação oficial à PikoBuy ou às marcas mencionadas. As ligações de navegação conduzem à Cafans e às categorias indicadas.</p>
+      </details>
+      <details>
+        <summary>As fotos QC garantem autenticidade?</summary>
+        <p>Não. As fotos QC ajudam a observar detalhes visíveis, mas não certificam autenticidade, composição, conforto ou durabilidade. Procure documentação de origem quando a autenticidade for essencial.</p>
+      </details>
+      <details>
+        <summary>Como escolher o tamanho de sapatilhas?</summary>
+        <p>Meça o pé e compare o comprimento em centímetros com a tabela do modelo. Confirme se a medida indicada é do pé ou da palmilha; não trate esses valores como equivalentes. A conversão EU ou US, por si só, pode ser insuficiente.</p>
+      </details>
+      <details>
+        <summary>O preço apresentado é o custo final?</summary>
+        <p>Não necessariamente. Verifique produto, transporte, serviços, câmbio e eventuais encargos no destino. Confirme os valores atuais antes de pagar; este guia não publica cotações nem prazos garantidos.</p>
+      </details>
+      <details>
+        <summary>Posso comprar diretamente nesta página?</summary>
+        <p>Não. Esta página apresenta orientação e acesso às categorias da Cafans. Não recebe pagamentos, não gere encomendas e não fornece apoio oficial da PikoBuy.</p>
+      </details>
+    </div>
+  </section>
+
+  <aside class="closing">
+    <div>
+      <p class="eyebrow">O próximo passo</p>
+      <h2>Escolha a categoria. Leve os seus critérios.</h2>
+    </div>
+    <a class="button" href="https://www.cafans.com">Visitar Cafans ↗</a>
+  </aside>
+</main>
+
+<footer class="wrap">
+  <p><strong>Caderno de Escolhas</strong> · Guia independente em português. Nike, Louis Vuitton, Gucci, Hermès e Dior são marcas dos respetivos titulares. A sua menção e as imagens não implicam parceria ou aprovação.</p>
+  <p>As fotografias são referências visuais e não anúncios de artigos específicos. Este conteúdo não certifica vendedores ou produtos. <a href="https://www.cafans.com">Continuar na Cafans</a>.</p>
+</footer>
+</body>
+</html>
